@@ -21,4 +21,7 @@ const UserEvent = database.define('UserEvent', {
   },
 });
 
+UserEvent.belongsTo(User, { foreignKey: 'userId' });
+User.hasMany(UserEvent, { foreignKey: 'userId' });
+
 export default UserEvent;

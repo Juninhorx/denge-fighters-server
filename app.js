@@ -6,6 +6,8 @@ import subscribeevent  from './routes/subscribeEvent.js'
 import getEvent from './routes/getEvent.js'
 import cors from 'cors'
 
+import getEventSubscribers from './controllers/getEventSubscribers.js';
+
 const app = express()
 const port = 3333
 
@@ -17,5 +19,6 @@ app.use('/createevent', createEvent)
 app.use('/getevent', getEvent)
 app.use('/subscribeevent', subscribeevent)
 
+app.get('/event/:eventId/subscribers', getEventSubscribers);
 
 app.listen(port, console.log(`server on http://localhost:${port}`))
