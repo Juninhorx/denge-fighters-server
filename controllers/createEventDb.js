@@ -7,7 +7,8 @@ const CreateEventDb = async (req, res) => {
   try {
     await database.sync()
     const newEvent = await Event.create(data)
-    res.status(201).send('Usuário cadastrado com sucesso!')
+    res.status(201).send('Evento cadastrado com sucesso!')
+    console.log(newEvent)
   } catch (error) {
     res.status(500).send(error.message)
   }
