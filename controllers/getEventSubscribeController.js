@@ -9,14 +9,14 @@ const getEventSubscribers = async (req, res) => {
     await sequelize.sync();
 
     const subscribers = await UserEvent.findAll({
-      where: { eventId },
+      where: { eventId:eventId },
       include: {
         model: User,
-        attributes: ['name'],
+        attributes: ['completeName'],
       },
     });
 
-    const subscriberNames = subscribers.map(subscriber => subscriber.User.name);
+    const subscriberNames = subscribers.map(subscriber => subscriber.User.completeName);
 
     res.status(200).json(subscriberNames);
   } catch (error) {
