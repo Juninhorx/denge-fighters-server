@@ -21,5 +21,4 @@ app.use('/getevent', getEvent)
 app.use('/subscribeevent', subscribeevent)
 app.use('/delete-event', deleteEvent)
 app.use('/subscribers', getSubscribe);
-
 app.listen(port, console.log(`server on http://localhost:${port}`))
