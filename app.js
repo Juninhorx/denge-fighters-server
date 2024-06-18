@@ -9,7 +9,7 @@ import cors from 'cors'
 import getSubscribe from './routes/getSubscribe.js'
 
 const app = express()
-const port = 3333
+const port = process.env.PORT || 3333
 
 app.use(express.json())
 app.use(cors({ origin: '*' }));
